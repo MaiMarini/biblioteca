@@ -1,5 +1,6 @@
 .card {
     width: 240px;
+    position: relative;
 }
 
 .card .cabecalho {
@@ -33,4 +34,10 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.card .deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }

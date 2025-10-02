@@ -3,6 +3,7 @@ import './Card.css'
 const Card = (props) => {
     return (
         <div className='card'>
+            <div className='deletar' onClick={() => props.aoDeletar(props.titulo)}>Deletar</div>
             <div className='cabecalho' style={{backgroundColor: props.corCard}}>
                 <img src={props.imagem} alt={props.titulo}/>
             </div>

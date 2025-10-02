@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.App h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+  color: #D8CFF0;
+  border-bottom: 4px solid;
+  border-color: #D8CFF0;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-top: 4px;
+}
