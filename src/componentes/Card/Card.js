@@ -1,9 +1,11 @@
-import './Card.css'
+import './Card.css';
+import { MdDelete } from "react-icons/md";
 
 const Card = (props) => {
+
     return (
         <div className='card'>
-            <div className='deletar' onClick={() => props.aoDeletar(props.titulo)}>Deletar</div>
+            <MdDelete size={25} className='deletar' onClick={() => props.aoDeletar(props.titulo)}/>
             <div className='cabecalho' style={{backgroundColor: props.corCard}}>
                 <img src={props.imagem} alt={props.titulo}/>
             </div>

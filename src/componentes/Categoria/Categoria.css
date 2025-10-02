@@ -1,10 +1,13 @@
 .categoria { 
     text-align: center;
     padding: 20px;
+    background-blend-mode: multiply;
+    position: relative;
 }
 
 .categoria h3 {
     font-size: 32px;
+    font-family: 'Prata';
     border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
@@ -17,4 +20,11 @@
     margin-top: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+}
+
+.input-cor {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    border-color: aliceblue;
 }
