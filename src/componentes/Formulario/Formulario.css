@@ -5,9 +5,42 @@
 }
 
 .formulario form {
+    position: relative;
     max-width: 80%;
     background-color: #F2F2F2;
     border-radius: 20px;
     padding: 36px 64px;
     box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
 }
+
+.formulario .campo-cor {
+  display: flex;
+  align-items: center; /* garante alinhamento vertical */
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.formulario .campo-texto {
+  width: 100%;
+}
+
+.formulario .campo-cor .campo-texto {
+  width: auto;
+  flex: 1; /* ocupa espaço proporcional */
+}
+
+/* Estilo do color picker */
+.formulario .cor-cat {
+    width: 60px; /* escolha que combina */
+    height: 76px; /* mesma altura do campo de texto */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.cor-cat::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+

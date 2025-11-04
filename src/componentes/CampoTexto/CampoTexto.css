@@ -16,4 +16,14 @@
     font-size: 24px;
     padding: 24px;
     box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.campo-cor-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-cor .campo-cor-input label {
+  margin-bottom: 2px; /* opcional: deixa mais compacto */
 }

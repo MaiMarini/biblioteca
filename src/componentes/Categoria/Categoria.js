@@ -9,7 +9,7 @@ const Categoria = (props) => {
         props.livros.length > 0 &&
         <section className='categoria' style={{backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(props.corCard, '0.2')}} >
             <input 
-                onChange={evento => props.altCor(evento.target.value, props.nome)} 
+                onChange={evento => props.altCor(evento.target.value, props.id)} 
                 value={props.corCard} 
                 type='color' 
                 className='input-cor' 
@@ -17,8 +17,10 @@ const Categoria = (props) => {
             <h3 style={{borderColor: props.corCard}}>{props.nome}</h3>
             <div className='livros'>
                 {props.livros.map(livro => {
+                    console.log (livro)
                         return <Card 
                             key={livro.titulo}
+                            id={livro.id}
                             titulo={livro.titulo} 
                             autor={livro.autor}
                             imagem={livro.imagem}
@@ -33,4 +35,5 @@ const Categoria = (props) => {
         </section>
     )
 }
+
 export default Categoria

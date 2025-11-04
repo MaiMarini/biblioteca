@@ -3,6 +3,8 @@ import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto'
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa'
 import Botao from '../Botao/Botao'
+import { v4 as uuidv4 } from 'uuid';
+import hexToRgba from 'hex-to-rgba';
 
 const Formulario = (props) => {
 
@@ -12,14 +14,17 @@ const Formulario = (props) => {
     const [ano, setAno] = useState('');
     const [imagem, setImagem] = useState('');
     const [categoria, setCategoria] = useState('');
+    const [nome, setNome] = useState('');
+    const [corPrimaria, setCor] = useState('');
 
     const valorAlt = (setState) => (valor) => {
         setState(valor);
     };
 
-    const submit = (evento) => {
+    const submitLivro = (evento) => {
         evento.preventDefault()
-        props.registro({
+        props.cadastroLivro({
+            id: uuidv4(),
             titulo,
             autor,
             editora,
@@ -33,13 +38,24 @@ const Formulario = (props) => {
         setAno("");
         setImagem("");
         setCategoria("");
+        console.log('Form foi submetido ');
+    }
+    const submitCategoria = (evento) => {
+        evento.preventDefault()
+        props.cadastroCategoria({
+            id: uuidv4(),
+            nome,
+            corPrimaria,
+        })
+        setNome("");
+        setCor("");
         console.log('Form foi submetido ')
     }
 
     return (
 
         <section className='formulario'>
-            <form onSubmit={submit}>
+            <form onSubmit={submitLivro}>
                 <h2>Preencha os dados para criar o card do livro</h2>
                 <CampoTexto 
                     obrigatorio = {true} 
@@ -82,6 +98,37 @@ const Formulario = (props) => {
                     valorAlt = {valorAlt(setCategoria)}
                 />
                 <Botao>Criar card</Botao>
+            </form>
+        
+            <form onSubmit={submitCategoria}>
+                <h2>Preencha os dados para criar uma nova categoria</h2>
+                <CampoTexto 
+                    obrigatorio = {true} 
+                    label="Nome" 
+                    placeholder= "nome da nova categoria"
+                    valor={nome}
+                    valorAlt = {valorAlt(setNome)}
+                />
+                <div className="campo-cor">
+                    <CampoTexto 
+                        className="campo-texto campo-cor-input"
+                        obrigatorio = {true} 
+                        label="Cor" 
+                        placeholder= "defina uma cor"
+                        valor={corPrimaria}
+                        valorAlt={(valor) => {
+                            const rgba = hexToRgba(valor)
+                            setCor(rgba) // salva RGBA no estado
+                        }}
+                    />
+                    <input 
+                        className='cor-cat'
+                        type="color"
+                        value={corPrimaria}
+                        onChange={(e) => setCor(e.target.value)}
+                    />
+                </div>
+                <Botao>Criar categoria</Botao>
             </form>
         </section>
 
