@@ -1,46 +1,45 @@
 .formulario {
     display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 100px;
 }
 
 .formulario form {
     position: relative;
-    max-width: 80%;
+    flex: 1;
     background-color: #F2F2F2;
-    border-radius: 20px;
-    padding: 36px 64px;
+    border-radius: 10px;
+    border-bottom: 4px solid;
+    border-color: #7A96F6;
+    padding: 36px 70px;
     box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
 }
 
+.formulario h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    color: #7A96F6;
+    border-bottom: 4px solid;
+    border-color: #7A96F6;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-top: 4px;
+}
+
 .formulario .campo-cor {
-  display: flex;
-  align-items: center; /* garante alinhamento vertical */
-  gap: 10px;
-  margin: 24px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
 }
 
-.formulario .campo-texto {
-  width: 100%;
+.campo-cor .campo {
+    width: 100%;
 }
 
-.formulario .campo-cor .campo-texto {
-  width: auto;
-  flex: 1; /* ocupa espaço proporcional */
+.formulario .campo-cor .campo-color {
+    width: 90px;
 }
-
-/* Estilo do color picker */
-.formulario .cor-cat {
-    width: 60px; /* escolha que combina */
-    height: 76px; /* mesma altura do campo de texto */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 0;
-    margin-top: 40px;
-}
-
-.cor-cat::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-

@@ -58,13 +58,15 @@ const Formulario = (props) => {
             <form onSubmit={submitLivro}>
                 <h2>Preencha os dados para criar o card do livro</h2>
                 <CampoTexto 
+                    type= "text"
                     obrigatorio = {true} 
                     label="Título" 
                     placeholder= "título do livro"
                     valor={titulo}
                     valorAlt = {valorAlt(setTitulo)}
                 />
-                <CampoTexto 
+                <CampoTexto
+                    type= "text" 
                     obrigatorio = {true} 
                     label="Autor" 
                     placeholder= "nome do autor"
@@ -72,6 +74,7 @@ const Formulario = (props) => {
                     valorAlt = {valorAlt(setAutor)}
                 />
                 <CampoTexto 
+                    type= "text"
                     obrigatorio = {true} 
                     label="Editora" 
                     placeholder= "nome da editora"
@@ -79,12 +82,14 @@ const Formulario = (props) => {
                     valorAlt = {valorAlt(setEditora)}
                 />
                 <CampoTexto 
+                    type= "text"
                     label="Ano de publicação" 
                     placeholder= "ano de publicação"
                     valor={ano}
                     valorAlt = {valorAlt(setAno)}
                 />
                 <CampoTexto 
+                    type= "text"
                     label="Imagem" 
                     placeholder= "link da imagem"
                     valor={imagem}
@@ -92,6 +97,7 @@ const Formulario = (props) => {
                 />
                 <ListaSuspensa 
                     obrigatorio = {true}
+                    type= "text"
                     label= "Categoria" 
                     itens={props.listaCategorias}
                     valor={categoria}
@@ -104,6 +110,7 @@ const Formulario = (props) => {
                 <h2>Preencha os dados para criar uma nova categoria</h2>
                 <CampoTexto 
                     obrigatorio = {true} 
+                    type= "text"
                     label="Nome" 
                     placeholder= "nome da nova categoria"
                     valor={nome}
@@ -111,8 +118,8 @@ const Formulario = (props) => {
                 />
                 <div className="campo-cor">
                     <CampoTexto 
-                        className="campo-texto campo-cor-input"
                         obrigatorio = {true} 
+                        type= "text"
                         label="Cor" 
                         placeholder= "defina uma cor"
                         valor={corPrimaria}
@@ -121,11 +128,12 @@ const Formulario = (props) => {
                             setCor(rgba) // salva RGBA no estado
                         }}
                     />
-                    <input 
-                        className='cor-cat'
-                        type="color"
+                    <CampoTexto
+                        type= "color"
+                        label= "Selecione"
                         value={corPrimaria}
                         onChange={(e) => setCor(e.target.value)}
+
                     />
                 </div>
                 <Botao>Criar categoria</Botao>

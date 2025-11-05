@@ -9,9 +9,14 @@ const CampoTexto = (props) => {
     }
 
     return (
-        <div className='campo-texto'>
+        <div className= {`campo campo-${props.type}`}>
             <label>{props.label}</label>
-            <input value={props.valor} onChange={info} required={props.obrigatorio} placeholder={placeholderMod}/>
+            <input 
+                type= {props.type}
+                value={props.valor} 
+                onChange={info} 
+                required={props.obrigatorio} 
+                placeholder={placeholderMod}/>
         </div>
     )
 }

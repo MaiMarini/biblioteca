@@ -1,15 +1,26 @@
+.listaSuspensa {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    gap: 10px; /* espaço entre label e input */
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
 .listaSuspensa label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 24px;
+    margin: 0;
+    font-size: 18px;
+    white-space: nowrap;
+    border-radius: 10px;
 }
 
 .listaSuspensa select {
     background-color: #ffff;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
+    height: 48px;
     border: none;
-    font-size: 24px;
-    padding: 24px;
+    font-size: 18px;
+    padding: 10px;
     box-sizing: border-box;
+    border-radius: 10px;
 }

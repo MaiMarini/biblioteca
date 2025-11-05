@@ -87,7 +87,7 @@ function App() {
         cadastroCategoria = {categoria => cadastrarCategoria(categoria)}
       />
       <section className='categorias'>
-        <h1>Minha organização</h1>
+        {livros.length > 0 && <h1>Minha organização</h1>}
         {listaCategoria.map(categoria =>
           <Categoria 
               //O react exige uma key unica para cada child, nesse caso, o nome
