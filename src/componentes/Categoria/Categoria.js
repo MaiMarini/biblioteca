@@ -21,6 +21,7 @@ const Categoria = (props) => {
                         return <Card 
                             key={livro.titulo}
                             id={livro.id}
+                            favorito={livro.favorito}
                             titulo={livro.titulo} 
                             autor={livro.autor}
                             imagem={livro.imagem}
@@ -28,6 +29,7 @@ const Categoria = (props) => {
                             editora={livro.editora}
                             corCard={props.corCard}
                             aoDeletar={props.aoDeletar}
+                            aoFavoritar={props.aoFavoritar}
                         />
                     }
                 )}

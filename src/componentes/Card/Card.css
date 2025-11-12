@@ -9,7 +9,7 @@
 }
 .card img {
     width: 100px;
-    border-radius: 50%;
+    border-radius: 8%;
     position: relative;
     bottom: -50px;
 }
@@ -26,18 +26,23 @@
     font-size: 18px;
     line-height: 22px;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-top: 30px;
 }
 
 .card .rodape h5 {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 22px;
     color: #212121;
-    padding: 0 16px;
 }
 
 .card .deletar {
     position: absolute;
     right: -10px;
     top: -10px;
+}
+
+.card .favoritar {
+    position: relative;
+    right: 0px;
+    top: 50px;
 }

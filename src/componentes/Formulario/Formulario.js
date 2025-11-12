@@ -25,6 +25,7 @@ const Formulario = (props) => {
         evento.preventDefault()
         props.cadastroLivro({
             id: uuidv4(),
+            favorito: false,
             titulo,
             autor,
             editora,

@@ -68,6 +68,17 @@ function App() {
       console.log("deletando livro: ", id);
   }
 
+  function favoritar(id) {
+      let novaLista = []
+      livros.forEach(livro => {
+      if(livro.id === id) livro.favorito = !livro.favorito;
+      novaLista.push(livro)  
+    }) 
+    console.log(novaLista) 
+    setLivros(novaLista)
+    
+  }
+
   const altCorCategoria = (cor, id) => {
   setListaCategorias(listaCategoria.map(categoria => {
       if (categoria.id === id) {
@@ -98,6 +109,7 @@ function App() {
               corCard={categoria.corPrimaria} 
               livros={livros.filter(livro => livro.categoria === categoria.nome)}
               aoDeletar= {deletarLivro}
+              aoFavoritar={favoritar}
           />
         )}
       </section>
